@@ -239,7 +239,7 @@
                                       <td  style="margin-top:20px; margin-bottom:20px;">{{ item.Maximum }}</td>
                                       <td  style="margin-top:20px; margin-bottom:20px;">{{ item.Min }}</td>
                                       <td><button  @click="editAddress(address)" class="ocean-blue-edit-button">&nbsp&nbspEdit Description&nbsp&nbsp</button></td>
-                                      <td></td>
+                                      <td>        <button @click="addPLC" class="grass-green-add-button" style="margin-left:30px;">Show Graph</button></td>
 
                                       </tr>
                                       
