@@ -129,7 +129,10 @@
                                   <!---<div style="margin-top:20px; margin-bottom:20px;">Digital: {{ item.digital }}</div>-->
                                   <!--For Loop PLC Digital Address / Channel-->
                                   <table>
-                                    
+                                    <tr>
+                                        <h3><u>Channel</u></h3>
+                                      </tr>
+
                                       <tr>
                                         <th>Address ID</th>
                                         <th>Address Name</th>
@@ -138,6 +141,7 @@
                                         <th>Edit</th>
 
                                       </tr>
+                                   
                                         <tr v-for="(address, addressIndex) in item.addresses" :key="addressIndex" style="text-align:left;">
 
                                                 <td  @click="handleAddressClick(item.id, address.id)" style="margin-top:20px; margin-bottom:20px; cursor: pointer;" >{{ address.id }}  </td>
@@ -173,7 +177,7 @@
                                       <tr v-for="item in bitAddress" :key="item.id" class="row" @click="toggleDropdown('both', item.id)">
                                       <td  style="margin-top:20px; margin-bottom:20px;">{{ item.bitAddress }}</td>
                                       <td  style="margin-top:20px; margin-bottom:20px;">{{ item.description }}</td>
-                                      <td><button v-if="!address.editing" @click="editAddress(address)" class="ocean-blue-edit-button">&nbsp&nbspEdit Description&nbsp&nbsp</button></td>
+                                      <td><button  @click="editAddress(address)" class="ocean-blue-edit-button">&nbsp&nbspEdit Description&nbsp&nbsp</button></td>
                                       <td>
 
                                         <div class="lamp-container">
@@ -187,6 +191,7 @@
                                       </td>
 
                                       </tr>
+
                                   </table>
                               </div>
 
@@ -210,7 +215,38 @@
                           </div>
 
                           <div v-if="item.showAnalogDropdown" class="dropdown" style="border: 2px solid black;">
-                              <div style="margin-top:20px; margin-bottom:20px;"> Analog: {{ item.analog }}</div>
+                            <!----> 
+                            
+                            <table style="width:100%; text-align:left;">
+                              <!--  {id:1 , AnalogAddress: 201, description:"Temperature",hexaValue: "FFFF", DecimalValue:"65,535",Maximum:"3000","Min":"500"},-->
+                                    <tr>
+                                      <th>Analog Address</th>
+                                      <th>Analog Description</th>
+                                      <th>Hexadecimal Value</th>
+                                      <th>Decimal Value</th>
+                                      <th>Maximum</th>
+                                      <th>Minimal</th>
+                                      <th>Edit</th>
+                                      <th>Show Graph</th>
+
+                                    </tr>
+
+                                      <tr v-for="item in Analog_address" :key="item.id" class="row" @click="toggleDropdown('both', item.id)">
+                                      <td  style="margin-top:20px; margin-bottom:20px;">{{ item.AnalogAddress}}</td>
+                                      <td  style="margin-top:20px; margin-bottom:20px;">{{ item.description }}</td>
+                                      <td  style="margin-top:20px; margin-bottom:20px;">{{ item.hexaValue }}</td>
+                                      <td  style="margin-top:20px; margin-bottom:20px;">{{ item.DecimalValue }}</td>
+                                      <td  style="margin-top:20px; margin-bottom:20px;">{{ item.Maximum }}</td>
+                                      <td  style="margin-top:20px; margin-bottom:20px;">{{ item.Min }}</td>
+                                      <td><button  @click="editAddress(address)" class="ocean-blue-edit-button">&nbsp&nbspEdit Description&nbsp&nbsp</button></td>
+                                      <td></td>
+
+                                      </tr>
+                                      
+                                  </table>
+
+                            <!---->
+                            
                           </div>
    
       </div>
@@ -250,12 +286,60 @@ export default {
          {id:5 , bitAddress: 100.05, description:"Alarm"},
          {id:6 , bitAddress: 100.06, description:"Alarm"},
          {id:7 , bitAddress: 100.07, description:"Alarm"},
+         {id:8 , bitAddress: 100.08, description:"Alarm"},
+         {id:9 , bitAddress: 100.09, description:"Alarm"},
+         {id:10 , bitAddress: 100.10, description:"Alarm"},
+         {id:11 , bitAddress: 100.11, description:"Alarm"},
+         {id:12 , bitAddress: 100.12, description:"Alarm"},
+         {id:13 , bitAddress: 100.13, description:"Alarm"},
+         {id:14 , bitAddress: 100.14, description:"Alarm"},
+         {id:15 , bitAddress: 100.15, description:"Alarm"},
+
 
      ],
-     bitAddress_2: [
-         {id:1 , bitAddress: 200.01, description:"Alarm"},
-         {id:2 , bitAddress: 300.02, description:"Alarm"},
-         {id:3 , bitAddress: 400.03, description:"Alarm"},
+     Analog_address: [
+         {id:1 , AnalogAddress: 200, description:"Temperature",hexaValue: "FFFF", DecimalValue:"65,535",Maximum:"3000","Min":"500"},
+         {id:2 , AnalogAddress: 201, description:"Temperature",hexaValue: "FFFF", DecimalValue:"65,535",Maximum:"3000","Min":"500"},
+         {id:3 , AnalogAddress: 202, description:"Temperature",hexaValue: "FFFF", DecimalValue:"65,535",Maximum:"3000","Min":"500"},
+         {id:4 , AnalogAddress: 203, description:"Temperature",hexaValue: "FFFF", DecimalValue:"65,535",Maximum:"3000","Min":"500"},
+         {id:5 , AnalogAddress: 204, description:"Temperature",hexaValue: "FFFF", DecimalValue:"65,535",Maximum:"3000","Min":"500"},
+         {id:6 , AnalogAddress: 205, description:"Temperature",hexaValue: "FFFF", DecimalValue:"65,535",Maximum:"3000","Min":"500"},
+         {id:7 , AnalogAddress: 206, description:"Temperature",hexaValue: "FFFF", DecimalValue:"65,535",Maximum:"3000","Min":"500"},
+         {id:8 , AnalogAddress: 207, description:"Temperature",hexaValue: "FFFF", DecimalValue:"65,535",Maximum:"3000","Min":"500"},
+         {id:9 , AnalogAddress: 208, description:"Temperature",hexaValue: "FFFF", DecimalValue:"65,535",Maximum:"3000","Min":"500"},
+         {id:10 , AnalogAddress: 209, description:"Temperature",hexaValue: "FFFF", DecimalValue:"65,535",Maximum:"3000","Min":"500"},
+         {id:11 , AnalogAddress: 210, description:"Temperature",hexaValue: "FFFF", DecimalValue:"65,535",Maximum:"3000","Min":"500"},
+         {id:12 , AnalogAddress: 211, description:"Temperature",hexaValue: "FFFF", DecimalValue:"65,535",Maximum:"3000","Min":"500"},
+         {id:13 , AnalogAddress: 212, description:"Temperature",hexaValue: "FFFF", DecimalValue:"65,535",Maximum:"3000","Min":"500"},
+         {id:14 , AnalogAddress: 213, description:"Temperature",hexaValue: "FFFF", DecimalValue:"65,535",Maximum:"3000","Min":"500"},
+         {id:15 , AnalogAddress: 214, description:"Temperature",hexaValue: "FFFF", DecimalValue:"65,535",Maximum:"3000","Min":"500"},
+         {id:16 , AnalogAddress: 215, description:"Temperature",hexaValue: "FFFF", DecimalValue:"65,535",Maximum:"3000","Min":"500"},
+         {id:17 , AnalogAddress: 216, description:"Temperature",hexaValue: "FFFF", DecimalValue:"65,535",Maximum:"3000","Min":"500"},
+         {id:18 , AnalogAddress: 217, description:"Temperature",hexaValue: "FFFF", DecimalValue:"65,535",Maximum:"3000","Min":"500"},
+         {id:19 , AnalogAddress: 218, description:"Temperature",hexaValue: "FFFF", DecimalValue:"65,535",Maximum:"3000","Min":"500"},
+         {id:20 , AnalogAddress: 219, description:"Temperature",hexaValue: "FFFF", DecimalValue:"65,535",Maximum:"3000","Min":"500"},
+         {id:21 , AnalogAddress: 220, description:"Temperature",hexaValue: "FFFF", DecimalValue:"65,535",Maximum:"3000","Min":"500"},
+         {id:22 , AnalogAddress: 221, description:"Temperature",hexaValue: "FFFF", DecimalValue:"65,535",Maximum:"3000","Min":"500"},
+         {id:23 , AnalogAddress: 222, description:"Temperature",hexaValue: "FFFF", DecimalValue:"65,535",Maximum:"3000","Min":"500"},
+         {id:24 , AnalogAddress: 223, description:"Temperature",hexaValue: "FFFF", DecimalValue:"65,535",Maximum:"3000","Min":"500"},
+         {id:25 , AnalogAddress: 224, description:"Temperature",hexaValue: "FFFF", DecimalValue:"65,535",Maximum:"3000","Min":"500"},
+         {id:26 , AnalogAddress: 225, description:"Temperature",hexaValue: "FFFF", DecimalValue:"65,535",Maximum:"3000","Min":"500"},
+         {id:27 , AnalogAddress: 226, description:"Temperature",hexaValue: "FFFF", DecimalValue:"65,535",Maximum:"3000","Min":"500"},
+         {id:28 , AnalogAddress: 227, description:"Temperature",hexaValue: "FFFF", DecimalValue:"65,535",Maximum:"3000","Min":"500"},
+         {id:29 , AnalogAddress: 228, description:"Temperature",hexaValue: "FFFF", DecimalValue:"65,535",Maximum:"3000","Min":"500"},
+         {id:30 , AnalogAddress: 229, description:"Temperature",hexaValue: "FFFF", DecimalValue:"65,535",Maximum:"3000","Min":"500"},
+         {id:31 , AnalogAddress: 230, description:"Temperature",hexaValue: "FFFF", DecimalValue:"65,535",Maximum:"3000","Min":"500"},
+         {id:32 , AnalogAddress: 231, description:"Temperature",hexaValue: "FFFF", DecimalValue:"65,535",Maximum:"3000","Min":"500"},
+         {id:33 , AnalogAddress: 232, description:"Temperature",hexaValue: "FFFF", DecimalValue:"65,535",Maximum:"3000","Min":"500"},
+         {id:34 , AnalogAddress: 233, description:"Temperature",hexaValue: "FFFF", DecimalValue:"65,535",Maximum:"3000","Min":"500"},
+         {id:35 , AnalogAddress: 234, description:"Temperature",hexaValue: "FFFF", DecimalValue:"65,535",Maximum:"3000","Min":"500"},
+         {id:36 , AnalogAddress: 235, description:"Temperature",hexaValue: "FFFF", DecimalValue:"65,535",Maximum:"3000","Min":"500"},
+         {id:37 , AnalogAddress: 236, description:"Temperature",hexaValue: "FFFF", DecimalValue:"65,535",Maximum:"3000","Min":"500"},
+         {id:38 , AnalogAddress: 237, description:"Temperature",hexaValue: "FFFF", DecimalValue:"65,535",Maximum:"3000","Min":"500"},
+         {id:39 , AnalogAddress: 238, description:"Temperature",hexaValue: "FFFF", DecimalValue:"65,535",Maximum:"3000","Min":"500"},
+         {id:40 , AnalogAddress: 239, description:"Temperature",hexaValue: "FFFF", DecimalValue:"65,535",Maximum:"3000","Min":"500"},
+
+
      ],
      jsonData: [
        {  id: 1, 
@@ -273,6 +357,17 @@ export default {
             { id:102, name: '102', description: 'Description for Address 2 in PLC 4', editing: false },
             { id:103, name: '103', description: 'Description for Address 2 in PLC 4', editing: false },
             { id:104, name: '104', description: 'Description for Address 2 in PLC 4', editing: false },
+            { id:105, name: '105', description: 'Description for Address 2 in PLC 4', editing: false },
+            { id:106, name: '106', description: 'Description for Address 2 in PLC 4', editing: false },
+            { id:107, name: '107', description: 'Description for Address 2 in PLC 4', editing: false },
+            { id:108, name: '108', description: 'Description for Address 2 in PLC 4', editing: false },
+            { id:109, name: '109', description: 'Description for Address 2 in PLC 4', editing: false },
+            { id:110, name: '110', description: 'Description for Address 2 in PLC 4', editing: false },
+            { id:111, name: '111', description: 'Description for Address 2 in PLC 4', editing: false },
+            { id:112, name: '112', description: 'Description for Address 2 in PLC 4', editing: false },
+            { id:113, name: '113', description: 'Description for Address 2 in PLC 4', editing: false },
+            { id:114, name: '114', description: 'Description for Address 2 in PLC 4', editing: false },
+            { id:115, name: '115', description: 'Description for Address 2 in PLC 4', editing: false },
 
             // Add more addresses with descriptions here
           ], 
