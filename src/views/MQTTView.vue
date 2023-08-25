@@ -166,12 +166,14 @@
                                     <tr>
                                       <th>Bit Address</th>
                                       <th>Bit Description</th>
+                                      <th>Edit Description</th>
                                       <th>Bit Lamp</th>
                                     </tr>
 
                                       <tr v-for="item in bitAddress" :key="item.id" class="row" @click="toggleDropdown('both', item.id)">
                                       <td  style="margin-top:20px; margin-bottom:20px;">{{ item.bitAddress }}</td>
                                       <td  style="margin-top:20px; margin-bottom:20px;">{{ item.description }}</td>
+                                      <td><button v-if="!address.editing" @click="editAddress(address)" class="ocean-blue-edit-button">&nbsp&nbspEdit Description&nbsp&nbsp</button></td>
                                       <td>
 
                                         <div class="lamp-container">
@@ -181,7 +183,7 @@
                                                       </div>
                                         </div>
 
-                                        
+
                                       </td>
 
                                       </tr>
