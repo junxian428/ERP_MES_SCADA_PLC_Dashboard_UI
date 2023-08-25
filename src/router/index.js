@@ -9,6 +9,36 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/HomeView.vue'),
   },
   {
+    path: '/Telegram',
+    name: 'Telegram',
+    component: () => import(/* webpackChunkName: "about" */ '../views/TelegramView.vue'),
+  },
+  {
+    path: '/MaintainenceTeamTracker',
+    name: 'MaintainenceTeamTracker',
+    component: () => import(/* webpackChunkName: "about" */ '../views/MTeamTracker.vue'),
+  },
+  {
+    path: '/MES',
+    name: 'MES',
+    component: () => import(/* webpackChunkName: "about" */ '../views/MESMainView.vue'),
+  },
+  {
+    path: '/ECommerce',
+    name: 'Ecommerce',
+    component: () => import(/* webpackChunkName: "about" */ '../views/ECommerceAdminView.vue'),
+  },
+  {
+    path: '/ERP',
+    name: 'ERP',
+    component: () => import(/* webpackChunkName: "about" */ '../views/ERPMainView.vue'),
+  },
+  {
+    path: '/WMS',
+    name: 'WMS',
+    component: () => import(/* webpackChunkName: "about" */ '../views/WarehouseMainView.vue'),
+  },
+  {
     path: '/MQTT',
     name: 'MQTT',
     component: () => import(/* webpackChunkName: "about" */ '../views/MQTTView.vue'),
@@ -62,6 +92,11 @@ const routes = [
     path: '/Documentation',
     name: 'Documentation',
     component: () => import(/* webpackChunkName: "about" */ '../views/Documentation.vue'),
+  },
+  {
+    path: '/loghistorian',
+    name: 'loghistorian',
+    component: () => import(/* webpackChunkName: "about" */ '../views/LogHistorian.vue'),
   },
   {
     path: '/HTTPS',

@@ -13,9 +13,31 @@
           <br>
           <div class="sidebar-content">
     
-            <p style="color:white;"><button><a href="#/">IoT Dashboard</a></button></p>
-            <p style="color:white;"><button><a href="#/SubscribePackage">Subscription Package</a></button></p>
-            <br>
+            <img src="FACTORY.png" style="width:100px;">
+
+<div class="dropdown" style="color:black;">
+  <button><a href="#/">SCADA Dashboard</a></button>
+  <div class="dropdown-content">
+    <a href="#" style="color:black;">Customize your own dashboard</a>
+    <a href="#" style="color:black;">Settings</a>
+  </div>
+</div>
+
+<p style="color:white;"><button><a href="#/loghistorian">Log Historian</a></button></p>
+<p style="color:white;"><button><a href="#/SubscribePackage">Subscription Package</a></button></p>
+<br>
+<hr>
+<br>
+<p style="color:white;"><u>Messaging API Setup</u></p>
+<p style="color:white;"><button><a href="#/Telegram">Telegram Setup</a></button></p>
+<p style="color:white;"><button><a href="#/">WhatsApp Setup</a></button></p>
+<br>
+<p style="color:white;"><u>Maintainence Team Performance System</u></p>
+<p style="color:white;"><button><a href="#/MaintainenceTeamTracker">Maintainence Team Tracker</a></button></p>
+<br>
+<hr>
+<br>
+        
     
           <p style="color:white;"><u>Supported Protocol</u></p>
           <p style="color:white;"><button><a href="#/MQTT">MQTT Mosquitto Endpoint</a></button></p>
@@ -41,6 +63,7 @@
     
         <div class="navbar">
             <a href="#" @click="selectedLevel = 'Level 5 ERP'">Level 5 ERP</a>
+            <a href="#" @click="selectedLevel = 'Level 5 ERP'">Level 5 E-Commerce</a>
             <a href="#" @click="selectedLevel = 'Level 4 WMS'">Level 4 WMS</a>
             <a href="#" @click="selectedLevel = 'Level 4 MES'">Level 4 MES</a>
             <a href="#" @click="selectedLevel = 'Level 3 SCADA/ HMI'">Level 3 SCADA/ HMI</a>
@@ -56,7 +79,7 @@
     
     
         <div class="main" style="margin-top:50px; color:white;">
-            <h2>HTTPS Endpoint</h2>
+            <h2>WebSocket Endpoint</h2>
           <br>
           <br>
           <img src="WEBSOCKET.jpg" style="width:250px;">

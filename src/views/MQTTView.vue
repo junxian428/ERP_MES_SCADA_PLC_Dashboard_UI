@@ -8,42 +8,66 @@
     
   
     <div class="sidebar">
-        <p>User ID: </p>
-        <p>Token: </p>
-        <br>
-        <div class="sidebar-content">
-  
-          <p style="color:white;"><button><a href="#/">IoT Dashboard</a></button></p>
-          <p style="color:white;"><button><a href="#/SubscribePackage">Subscription Package</a></button></p>
+      <p>User ID: {{ userID }}</p>
+      <p>Token: {{ userToken }}</p>
+    
+      <div class="sidebar-content">
 
-          <br>
-  
-        <p style="color:white;"><u>Supported Protocol</u></p>
-        <p style="color:white;"><button><a href="#/MQTT">MQTT Mosquitto Endpoint</a></button></p>
-        <p style="color:white;"><button><a href="#/IoTCore">AWS IoT Core Endpoint</a></button></p>
-        <p style="color:white;"><button><a href="#/HTTPS">HTTPS API Endpoint</a></button></p>
-        <p style="color:white;"><button><a href="#/GRPC">GRPC Endpoint</a></button></p>
-        <p style="color:white;"><button><a href="#/WebSocket">Web Socket Endpoint</a></button></p>
-        <p style="color:white;"><button><a href="#/Modbus">Modbus TCP Endpoint</a></button></p>
-        <p style="color:white;"><button><a href="#/OPCUA">OPC UA Endpoint</a></button></p>
-        <p style="color:white;"><button><a href="#/COAP">COAP Endpoint</a></button></p>
-        <br>
-        <br>
-        <p style="color:white;"><u>Official SDK Package</u></p>
-        <p style="color:white;"><button><a href="#/IoTCore">Robomatics IoT SDK</a></button></p>
-        <p style="color:white;"><button><a href="#/IoTCore">Third Party API</a></button></p>
-        <br>
-        <br>
-        <p style="color:white;"><u>Developer Support</u></p>
-        <p style="color:white;"><button><a href="#/Documentation">Documentation</a></button></p>
-          <!-- Sidebar content -->
+        <div class="dropdown" style="color:black;">
+          <button><a href="#/">        <img src="FACTORY.png" style="width:100px;">SCADA Dashboard</a></button>
+          <div class="dropdown-content">
+            <a href="#" style="color:black;">Customize your own dashboard</a>
+            <a href="#" style="color:black;">Settings</a>
           </div>
-      </div>
+        </div>
+  
+  <p style="color:white;"><button><a href="#/loghistorian"><img src="LOG.png" style="width:100px;">Log Historian</a></button></p>
+        <p style="color:white;"><button><a href="#/SubscribePackage">  <img src="DEAL.png" style="width:100px;">Subscription Package</a></button></p>
+        <br>
+        <hr>
+        <br>
+        <h3 style="color:white;">Messaging API Setup</h3>
+        <p style="color:white;"><button><a href="#/Telegram"> <img src="TELEGRAM.png" style="width:100px;">Telegram Setup</a></button></p>
+        <p style="color:white;"><button><a href="#/"><img src="WHATSAPP.png" style="width:100px;">WhatsApp Setup</a></button></p>
+        <br>
+        <hr>
+        <br>
+        <h3 style="color:white;">Maintainence Team Performance System</h3>
+        <p style="color:white;"><button><a href="#/MaintainenceTeamTracker"><img src="MAINTAIN.png" style="width:100px;">Maintainence Team Tracker</a></button></p>
+        <p style="color:white;"><button><a href="#/MaintainenceTeamTracker"><img src="REPORT.jpg" style="width:100px;">Maintainence Team Report</a></button></p>
+        <br>
+        <hr>
+        <br>
+
+      <h3 style="color:white;">Supported Protocol</h3>
+      <p style="color:white;"><button><a href="#/MQTT"><img src="MOSQUITTO_LOGO.png" style="width:100px;">MQTT Mosquitto Endpoint</a></button></p>
+      <p style="color:white;"><button><a href="#/IoTCore"><img src="IOTCORE.png" style="width:100px;">AWS IoT Core Endpoint</a></button></p>
+      <p style="color:white;"><button><a href="#/HTTPS"><img src="HTTPS.png" style="width:100px;">HTTPS API Endpoint</a></button></p>
+      <p style="color:white;"><button><a href="#/GRPC"><img src="GRPCLogo.png" style="width:100px;">GRPC Endpoint</a></button></p>
+      <p style="color:white;"><button><a href="#/WebSocket"><img src="WEBSOCKET.png" style="width:100px;">Web Socket Endpoint</a></button></p>
+      <p style="color:white;"><button><a href="#/Modbus"><img src="MODBUS.png" style="width:100px;">Modbus TCP Endpoint</a></button></p>
+      <p style="color:white;"><button><a href="#/OPCUA"><img src="OPCUALogo.png" style="width:100px;">OPC UA Endpoint</a></button></p>
+      <p style="color:white;"><button><a href="#/COAP"><img src="COAPLogo.png" style="width:100px;">COAP Endpoint</a></button></p>
+      <br>
+      <hr>
+      <br>
+      <h3 style="color:white;">Official SDK Package</h3>
+      <p style="color:white;"><button><a href="#/IoTCore"><img src="SDK.png" style="width:100px;">Robomatics IoT SDK</a></button></p>
+      <p style="color:white;"><button><a href="#/IoTCore"><img src="API.png" style="width:100px;">Third Party API</a></button></p>
+      <br>
+      <hr>
+      <br>
+      <h3 style="color:white;">Developer Support</h3>
+      <p style="color:white;"><button><a href="#/Documentation">Documentation</a></button></p>
+        <!-- Sidebar content -->
+        </div>
+    </div>
   
       <div class="navbar">
-          <a href="#" @click="selectedLevel = 'Level 5 ERP'">Level 5 ERP</a>
-          <a href="#" @click="selectedLevel = 'Level 4 WMS'">Level 4 WMS</a>
-          <a href="#" @click="selectedLevel = 'Level 4 MES'">Level 4 MES</a>
+          <a href="#/ERP" @click="selectedLevel = 'Level 5 ERP'">Level 5 ERP</a>
+          <a href="#/ECommerce" @click="selectedLevel = 'Level 5 ERP'">Level 5 E-Commerce</a>
+          <a href="#/WMS" @click="selectedLevel = 'Level 4 WMS'">Level 4 WMS</a>
+          <a href="#/MES" @click="selectedLevel = 'Level 4 MES'">Level 4 MES</a>
           <a href="#" @click="selectedLevel = 'Level 3 SCADA/ HMI'">Level 3 SCADA/ HMI</a>
           <a href="#" @click="selectedLevel = 'Level 2 PLC'">Level 2 PLC</a>
           <a href="#" @click="selectedLevel = 'Level 1 Sensor and Actuator'">Level 1 Sensor and Actuator</a>
