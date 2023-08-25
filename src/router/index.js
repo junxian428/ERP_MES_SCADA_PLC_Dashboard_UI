@@ -7,19 +7,68 @@ const routes = [
     path: '/',
     name: 'home',
     component: () => import(/* webpackChunkName: "about" */ '../views/HomeView.vue'),
-    meta: {
-      requiresAuth: true, // Add the 'requiresAuth' meta field to the route
-    },
   },
   {
-    path: '/Items',
-    name: 'Items',
-    component: () => import(/* webpackChunkName: "about" */ '../views/Items.vue'),
-    meta: {
-      requiresAuth: true, // Add the 'requiresAuth' meta field to the route
-    },
+    path: '/MQTT',
+    name: 'MQTT',
+    component: () => import(/* webpackChunkName: "about" */ '../views/MQTTView.vue'),
   },
-
+  {
+    path: '/SubscribePackage',
+    name: 'SubscribePackage',
+    component: () => import(/* webpackChunkName: "about" */ '../views/SubscriptionPackage.vue'),
+  },
+  {
+    path: '/WebSocket',
+    name: 'WebSocket',
+    component: () => import(/* webpackChunkName: "about" */ '../views/WebSocketView.vue'),
+  },
+  {
+    path: '/Modbus',
+    name: 'Modbus',
+    component: () => import(/* webpackChunkName: "about" */ '../views/ModbusView.vue'),
+  },
+  {
+    path: '/COAP',
+    name: 'COAP',
+    component: () => import(/* webpackChunkName: "about" */ '../views/COAPView.vue'),
+  },
+  {
+    path: '/test',
+    name: 'test',
+    component: () => import(/* webpackChunkName: "about" */ '../views/test.vue'),
+  },
+  {
+    path: '/test2',
+    name: 'test2',
+    component: () => import(/* webpackChunkName: "about" */ '../views/test2.vue'),
+  },
+  {
+    path: '/OPCUA',
+    name: 'OPCUA',
+    component: () => import(/* webpackChunkName: "about" */ '../views/OPCUAView.vue'),
+  },
+  {
+    path: '/IoTCore',
+    name: 'IoTCore',
+    component: () => import(/* webpackChunkName: "about" */ '../views/IoTCoreView.vue'),
+  },
+  {
+    path: '/GRPC',
+    name: 'GRPC',
+    component: () => import(/* webpackChunkName: "about" */ '../views/GRPCView.vue'),
+  },
+  {
+    path: '/Documentation',
+    name: 'Documentation',
+    component: () => import(/* webpackChunkName: "about" */ '../views/Documentation.vue'),
+  },
+  {
+    path: '/HTTPS',
+    name: 'HTTPS',
+    component: () => import(/* webpackChunkName: "about" */ '../views/HTTPSView.vue'),
+  },
+  
   {
     path: '/Monitor',
     name: 'Monitor',
