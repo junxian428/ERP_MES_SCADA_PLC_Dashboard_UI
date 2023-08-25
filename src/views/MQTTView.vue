@@ -81,7 +81,13 @@
   
   
     <div>
-
+      <!---->
+      <div>
+        <input v-model="newPLCName"  style="line-height: 28px;" placeholder="PLC name">
+        <input v-model="newPLCToken" style=" margin-left:30px; line-height: 28px;" placeholder="PLC token">
+        <button @click="addPLC" class="grass-green-add-button" style="margin-left:30px;">Add PLC</button>
+      </div>
+      <br>
       <!---->
       <table>
 
@@ -128,29 +134,58 @@
                                         <th>Address ID</th>
                                         <th>Address Name</th>
                                         <th>Address Description</th>
-                                        <th>Edit</th>
                                         <th>Delete</th>
+                                        <th>Edit</th>
 
                                       </tr>
                                         <tr v-for="(address, addressIndex) in item.addresses" :key="addressIndex" style="text-align:left;">
 
                                                 <td  @click="handleAddressClick(item.id, address.id)" style="margin-top:20px; margin-bottom:20px; cursor: pointer;" >{{ address.id }}  </td>
                                                 <td  @click="handleAddressClick(item.id, address.id)" >{{ address.name }}  </td>
-                                                <td v-if="!address.editing"  >  {{ address.description }}</td>
-
-                                                
+                                                <td v-if="!address.editing"   @click="handleAddressClick(item.id, address.id)">  {{ address.description }}</td>
+                                                <td><button @click="showDeleteConfirmation(plcIndex, addressIndex)" class="red-alert-button">Delete</button></td>
+                                                <td><button v-if="!address.editing" @click="editAddress(address)" class="ocean-blue-edit-button">&nbsp&nbspEdit Description&nbsp&nbsp</button></td>
+                                               <!---
+                                                <td>
+                                                  <div class="lamp-container">
+                                                      <div class="lamp">
+                                                        <div class="bit on"></div>
+                                                        <div class="bit off"></div>
+                                                      </div>
+                                                    </div>
+                                                </td>
+                                                --->
 
                                         </tr>
                                   </table>
                                   <!--End For Loop-->
 
-                                  <div v-if="item.showBitAddress" class="dropdown" style=" margin-left:50px;">
+                            <div v-if="item.showBitAddress" class="dropdown" style=" margin-left:50px;">
                                     <h3 style="text-align: left;"><u>Bit Address</u></h3>
-                                  <div style="border: 2px solid black; display:inline-block; width:100%; text-align:left;">
-                                      <div v-for="item in bitAddress" :key="item.id" class="row" @click="toggleDropdown('both', item.id)">
-                                      <div  style="margin-top:20px; margin-bottom:20px;">{{ item.bitAddress }} - {{ item.description }}</div>
-                                      </div>
-                                  </div>
+                                  <table style="width:100%; text-align:left;">
+                                    <tr>
+                                      <th>Bit Address</th>
+                                      <th>Bit Description</th>
+                                      <th>Bit Lamp</th>
+                                    </tr>
+
+                                      <tr v-for="item in bitAddress" :key="item.id" class="row" @click="toggleDropdown('both', item.id)">
+                                      <td  style="margin-top:20px; margin-bottom:20px;">{{ item.bitAddress }}</td>
+                                      <td  style="margin-top:20px; margin-bottom:20px;">{{ item.description }}</td>
+                                      <td>
+
+                                        <div class="lamp-container">
+                                                      <div class="lamp">
+                                                        <div class="bit on"></div>
+                                                        <div class="bit off"></div>
+                                                      </div>
+                                        </div>
+
+                                        
+                                      </td>
+
+                                      </tr>
+                                  </table>
                               </div>
 
                               </div>
@@ -573,5 +608,42 @@ export default {
     text-align: left;
     cursor: pointer;
   }
-  
+  /* Bit Lamp*/
+    /* Bit Lamp*/
+  /* Bit Lamp*/
+  /* Bit Lamp*/
+  /* Bit Lamp*/
+  /* Bit Lamp*/
+  /* Bit Lamp*/
+
+  .lamp-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lamp {
+  display: flex;
+}
+
+.bit {
+  width: 20px;
+  height: 20px;
+  margin: 2px;
+  border-radius: 50%;
+}
+
+.on {
+  background-color: green;
+}
+
+.off {
+  background-color: gray;
+}
+  /* Bit Lamp*/
+  /* Bit Lamp*/
+  /* Bit Lamp*/
+  /* Bit Lamp*/
+  /* Bit Lamp*/
+
   </style>
